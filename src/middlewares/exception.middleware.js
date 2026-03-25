@@ -1,5 +1,5 @@
 export const errorMiddleware = (err, req, res, next) => {
-  const statusHttp = err.errorStatus || 500;
+  const statusHttp = err.errorStatus || err.status || 500;
   const code = err.errorCode || 'INTERNAL_SERVER_ERROR';
   const message = err.message || 'An unexpected error occurred';
 
@@ -7,5 +7,6 @@ export const errorMiddleware = (err, req, res, next) => {
     status: statusHttp,
     code: code,
     message: message,
+    stack: err?.stack || null,
   });
 };

@@ -1,0 +1,7 @@
+export const SHEET_HEADERS_POTENTIAL_CLIENTS = Object.freeze({
+  DATE: 'FECHA',
+  NAME: 'NOMBRE',
+  STATUS: 'ESTADO',
+  WHATSAPP: 'WHATSAPP',
+  MESSAGE: 'MENSAJES',
+});

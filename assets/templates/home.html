@@ -3994,35 +3994,66 @@
       }
 
       // ── FORM SUBMIT ───────────────────────────────────────
-      function handleSubmit(e) {
+      async function handleSubmit(e) {
         e.preventDefault();
         const form = e.target;
-        const nombre = form.nombre.value.trim();
-        const whatsapp = form.whatsapp.value.trim();
-        const servicio = form.servicio.value;
-        const mensaje = form.mensaje.value.trim();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        // Extraer valores
+        const formData = {
+          nombre: form.nombre.value.trim(),
+          whatsapp: form.whatsapp.value.trim(),
+          servicio: form.servicio.value,
+          mensaje: form.mensaje.value.trim(),
+          fecha: new Date().toISOString()
+        };
 
-        // Build WhatsApp message
-        const text = encodeURIComponent(
-          `¡Hola! Soy ${nombre}.\n` +
-            `Servicio de interés: ${servicio || "No especificado"}\n` +
-            (mensaje ? `Mensaje: ${mensaje}` : ""),
-        );
+        // Bloquear botón para evitar múltiples envíos
+        if (submitBtn) submitBtn.disabled = true;
 
-        console.log({nombre, whatsapp, servicio, mensaje, text});
+        try {
+          const urlBase = window.location.origin;
+          // 1. Enviar datos al servidor vía POST
+          const response = await fetch(`${urlBase}/home/capture`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
 
-        // Show success
-        document.getElementById("form-success").style.display = "block";
-        form.reset();
+          if (!response.ok) throw new Error('Error en el servidor');
 
-        // Redirect to WhatsApp
-        /* setTimeout(() => {
-          window.open(
-            `https://wa.me/51999999999?text=${text}`,
-            "_blank",
-            "noopener,noreferrer",
+          // 2. Lógica de éxito visual
+          const successAlert = document.getElementById("form-success");
+          if (successAlert) successAlert.style.display = "block";
+          
+          form.reset();
+
+          // 3. Opcional: Redirección a WhatsApp después del POST
+          /*
+          const text = encodeURIComponent(
+            `¡Hola! Soy ${formData.nombre}.\n` +
+            `Servicio: ${formData.servicio || "No especificado"}\n` +
+            (formData.mensaje ? `Mensaje: ${formData.mensaje}` : "")
           );
-        }, 600); */
+
+          setTimeout(() => {
+            window.open(
+              `https://wa.me/51999999999?text=${text}`,
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }, 800);
+          */
+
+        } catch (error) {
+          console.error("Error al enviar:", error);
+          alert("Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.");
+        } finally {
+          // Reactivar botón
+          if (submitBtn) submitBtn.disabled = false;
+        }
       }
 
       // ── SMOOTH SCROLL ─────────────────────────────────────

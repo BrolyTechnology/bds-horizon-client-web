@@ -161,6 +161,10 @@ jobs:
             ENVIRONMENT=${{ env.secret_key_environment }}
 
             NODE_ENV=${{ vars.NODE_ENV }}
+
+            GOOGLE_SPREADSHEET_ID=${{ secrets.GOOGLE_SPREADSHEET_ID }}
+            GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+            GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY=${{ secrets.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           provenance: false

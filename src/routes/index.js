@@ -1,9 +1,9 @@
+import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
-import 'express-async-error';
 import { notFoundMiddleware } from '../middlewares/notFound.middleware';
 import { errorMiddleware } from '../middlewares/exception.middleware';
 
