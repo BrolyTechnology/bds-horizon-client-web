@@ -1,3 +1,5 @@
+import { readFile } from '../utils/template.util';
+
 export default class HomeService {
   constructor({ pkg }) {
     this._pkg = pkg;
@@ -9,5 +11,9 @@ export default class HomeService {
       message: `Welcome to application ${this._pkg.name.split('-').join(' ')}.`,
       version: `${this._pkg.version}`,
     };
+  }
+
+  viewRender() {
+    return readFile('home.html');
   }
 }

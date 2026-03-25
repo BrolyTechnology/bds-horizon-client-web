@@ -1,0 +1,4317 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <!-- ═══════════════════════════════════════════════════
+       SEO & META
+  ═══════════════════════════════════════════════════ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>
+      Broly Development Studio | Sistemas Modernos para Negocios en Chiclayo,
+      Perú
+    </title>
+    <meta
+      name="description"
+      content="Broly Development Studio: desarrollamos sitios web profesionales, automatizaciones de procesos, chatbots con IA y marketing digital para negocios y emprendedores en Chiclayo, Perú."
+    />
+    <meta
+      name="keywords"
+      content="desarrollo web Chiclayo, automatizaciones empresas Perú, chatbot IA WhatsApp, landing page SEO, software a medida Chiclayo, Broly Development Studio"
+    />
+    <meta name="author" content="Broly Development Studio" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://brolydevelopment.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brolydevelopment.com/" />
+    <meta
+      property="og:title"
+      content="Broly Development Studio | Sistemas Modernos para Negocios"
+    />
+    <meta
+      property="og:description"
+      content="Desarrollamos sistemas modernos que hacen crecer tu negocio. Web, automatizaciones, IA y marketing digital en Chiclayo, Perú."
+    />
+    <meta
+      property="og:image"
+      content="https://brolydevelopment.com/og-image.png"
+    />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Broly Development Studio" />
+    <meta
+      name="twitter:description"
+      content="Sistemas modernos para desafíos complejos. Chiclayo, Perú."
+    />
+    <meta
+      name="twitter:image"
+      content="https://brolydevelopment.com/og-image.png"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Broly Development Studio",
+        "description": "Estudio tecnológico especializado en desarrollo web, automatizaciones, chatbots con IA y marketing digital.",
+        "url": "https://brolydevelopment.com",
+        "logo": "https://brolydevelopment.com/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chiclayo",
+          "addressRegion": "Lambayeque",
+          "addressCountry": "PE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+          "https://facebook.com/brolydevelopment",
+          "https://instagram.com/brolydevelopment",
+          "https://tiktok.com/@brolydevelopment"
+        ]
+      }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════
+       FONTS — Montserrat + DM Mono
+  ═══════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- DaisyUI CDN (base de FlyonUI) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/daisyui.css"
+      rel="stylesheet"
+    />
+
+    <!-- FlyonUI JS (accordion, modal, tabs, etc.) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/flyonui@2/dist/index.min.js"
+      defer
+    ></script>
+
+    <!-- Lucide Icons -->
+    <script
+      src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
+      defer
+    ></script>
+
+    <!-- ═══════════════════════════════════════════════════
+       CUSTOM CSS
+  ═══════════════════════════════════════════════════ -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bds-black: #080810;
+        --color-bds-dark: #0e0b16;
+        --color-bds-purple: #7b2fbe;
+        --color-bds-purple2: #9b4dca;
+        --color-bds-magenta: #c0268f;
+        --color-bds-mag2: #e040a0;
+        --color-bds-gray: #6b6575;
+        --color-bds-light: #f3eef9;
+        --color-bds-border: #1e1528;
+      }
+    </style>
+
+    <style>
+      /* ── GLOBAL ──────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #080810;
+        color: #f0eaf8;
+        overflow-x: hidden;
+      }
+
+      /* ── SCROLLBAR ───────────────────────────────────── */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #080810;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7b2fbe;
+        border-radius: 2px;
+      }
+
+      /* ── GRADIENT MESH BACKGROUND ────────────────────── */
+      .mesh-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 10% 20%,
+            rgba(123, 47, 190, 0.18) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 90% 80%,
+            rgba(192, 38, 143, 0.14) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 40% 60% at 50% 50%,
+            rgba(123, 47, 190, 0.06) 0%,
+            transparent 80%
+          );
+      }
+
+      /* ── GRAIN OVERLAY ───────────────────────────────── */
+      .grain::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      }
+
+      /* ── LAYOUT ──────────────────────────────────────── */
+      .container-bds {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* ── GRADIENT TEXT ───────────────────────────────── */
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #c0268f 0%,
+          #9b4dca 50%,
+          #7b2fbe 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .gradient-text-rev {
+        background: linear-gradient(135deg, #7b2fbe 0%, #c0268f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ── GRADIENT BORDER CARD ────────────────────────── */
+      .grad-border {
+        position: relative;
+        background: rgba(14, 11, 22, 0.8);
+        border-radius: 16px;
+      }
+      .grad-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 1px;
+        background: linear-gradient(
+          135deg,
+          rgba(123, 47, 190, 0.6),
+          rgba(192, 38, 143, 0.4),
+          transparent 60%
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      /* ── PILL TAG ────────────────────────────────────── */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(123, 47, 190, 0.4);
+        background: rgba(123, 47, 190, 0.1);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #c0268f;
+      }
+
+      /* ── SECTION TITLE ───────────────────────────────── */
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      /* ── NAV ─────────────────────────────────────────── */
+      #navbar {
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        transition:
+          background 0.3s ease,
+          border-color 0.3s ease;
+      }
+      #navbar.scrolled {
+        background: rgba(8, 8, 16, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(123, 47, 190, 0.2);
+      }
+      /* contenedor interno del nav */
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      /* links desktop */
+      .nav-desktop-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex: 1;
+        justify-content: center;
+      }
+      .nav-desktop-links a {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+      .nav-desktop-links a:hover {
+        color: #fff;
+      }
+      /* CTA desktop */
+      .nav-desktop-cta {
+        flex-shrink: 0;
+      }
+      /* hamburger */
+      .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        flex-shrink: 0;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+        transform-origin: center;
+      }
+      .nav-hamburger.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-hamburger.is-open span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-hamburger.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      /* drawer móvil */
+      #mobile-menu {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(8, 8, 16, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(123, 47, 190, 0.2);
+        z-index: 999;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.3s ease;
+      }
+      #mobile-menu.open {
+        max-height: 520px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-menu-inner {
+        padding: 1.25rem 1.5rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .mobile-menu-inner a {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .mobile-menu-inner a:hover {
+        background: rgba(123, 47, 190, 0.12);
+        color: #fff;
+        border-color: rgba(123, 47, 190, 0.25);
+      }
+      .mobile-menu-divider {
+        height: 1px;
+        background: rgba(123, 47, 190, 0.15);
+        margin: 0.5rem 0;
+      }
+      .mobile-menu-cta {
+        background: linear-gradient(135deg, #7b2fbe, #c0268f) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        text-align: center;
+        border-color: transparent !important;
+        margin-top: 0.25rem;
+      }
+      .mobile-menu-cta:hover {
+        opacity: 0.88;
+      }
+      /* ocultar/mostrar según viewport */
+      @media (max-width: 900px) {
+        .nav-desktop-links {
+          display: none;
+        }
+        .nav-desktop-cta {
+          display: none;
+        }
+        .nav-hamburger {
+          display: flex;
+        }
+      }
+
+      /* ── HERO ────────────────────────────────────────── */
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 80px;
+        position: relative;
+      }
+
+      .hero-glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        filter: blur(120px);
+        pointer-events: none;
+      }
+      .hero-glow-1 {
+        background: rgba(123, 47, 190, 0.25);
+        top: 10%;
+        left: -10%;
+      }
+      .hero-glow-2 {
+        background: rgba(192, 38, 143, 0.18);
+        bottom: 10%;
+        right: -5%;
+      }
+
+      /* ── COUNTER ─────────────────────────────────────── */
+      .stat-num {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      /* ── SERVICE CARD ────────────────────────────────── */
+      .service-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        cursor: default;
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(123, 47, 190, 0.25);
+      }
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          rgba(123, 47, 190, 0.3),
+          rgba(192, 38, 143, 0.2)
+        );
+        border: 1px solid rgba(123, 47, 190, 0.3);
+        margin-bottom: 1.2rem;
+      }
+
+      /* ── WHY US ──────────────────────────────────────── */
+      .why-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.25rem;
+        border-radius: 12px;
+        border: 1px solid rgba(123, 47, 190, 0.15);
+        background: rgba(123, 47, 190, 0.04);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .why-item:hover {
+        border-color: rgba(123, 47, 190, 0.4);
+        background: rgba(123, 47, 190, 0.08);
+      }
+      .why-num {
+        min-width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #7b2fbe, #c0268f);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      /* ── PROCESS ─────────────────────────────────────── */
+      .process-step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .process-step::after {
+        content: "";
+        position: absolute;
+        top: 28px;
+        left: calc(50% + 36px);
+        width: calc(100% - 72px);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(123, 47, 190, 0.5),
+          transparent
+        );
+      }
+      .process-step:last-child::after {
+        display: none;
+      }
+      .step-circle {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 2px solid rgba(123, 47, 190, 0.5);
+        background: rgba(123, 47, 190, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #9b4dca;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s;
+      }
+      .process-step:hover .step-circle {
+        background: linear-gradient(135deg, #7b2fbe, #c0268f);
+        border-color: transparent;
+        color: white;
+      }
+
+      /* ── CLIENT LOGOS ────────────────────────────────── */
+      .logos-track {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        animation: marquee 25s linear infinite;
+        white-space: nowrap;
+      }
+      .logos-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .logo-placeholder {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 28px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        min-width: 160px;
+        text-align: center;
+        transition:
+          border-color 0.3s,
+          color 0.3s;
+        flex-shrink: 0;
+      }
+      .logo-placeholder:hover {
+        border-color: rgba(123, 47, 190, 0.4);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ── TESTIMONIAL ─────────────────────────────────── */
+      .testimonial-card {
+        background: rgba(14, 11, 22, 0.7);
+        border: 1px solid rgba(123, 47, 190, 0.2);
+        border-radius: 16px;
+        padding: 1.75rem;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .testimonial-card:hover {
+        border-color: rgba(192, 38, 143, 0.4);
+        transform: translateY(-4px);
+      }
+
+      /* ── CTA BUTTON ──────────────────────────────────── */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 32px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        background: linear-gradient(135deg, #7b2fbe 0%, #c0268f 100%);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition:
+          opacity 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 36px rgba(123, 47, 190, 0.45);
+      }
+      .btn-primary:hover::before {
+        opacity: 1;
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 32px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        background: transparent;
+        color: #c0268f;
+        border: 1.5px solid rgba(192, 38, 143, 0.5);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+      }
+      .btn-outline:hover {
+        background: rgba(192, 38, 143, 0.08);
+        border-color: #c0268f;
+        transform: translateY(-2px);
+      }
+
+      /* ── WHATSAPP FLOAT ──────────────────────────────── */
+      .wa-float {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 200;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        animation: pulse-wa 2.5s ease-in-out infinite;
+      }
+      .wa-float:hover {
+        transform: scale(1.1) translateY(-3px);
+        box-shadow: 0 16px 48px rgba(37, 211, 102, 0.6);
+        animation: none;
+      }
+      @keyframes pulse-wa {
+        0%,
+        100% {
+          box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+        }
+        50% {
+          box-shadow:
+            0 8px 48px rgba(37, 211, 102, 0.7),
+            0 0 0 8px rgba(37, 211, 102, 0.1);
+        }
+      }
+      .wa-tooltip {
+        position: absolute;
+        right: calc(100% + 12px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(8, 8, 16, 0.9);
+        color: white;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .wa-float:hover .wa-tooltip {
+        opacity: 1;
+      }
+
+      /* ── FORM ────────────────────────────────────────── */
+      .form-input {
+        width: 100%;
+        padding: 13px 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(123, 47, 190, 0.25);
+        border-radius: 10px;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .form-input:focus {
+        border-color: #7b2fbe;
+        background: rgba(123, 47, 190, 0.06);
+      }
+
+      /* ── ACCORDION ───────────────────────────────────── */
+      .faq-item {
+        border-bottom: 1px solid rgba(123, 47, 190, 0.15);
+      }
+      .faq-btn {
+        width: 100%;
+        text-align: left;
+        padding: 1.1rem 0;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #f0eaf8;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        transition: color 0.2s;
+      }
+      .faq-btn:hover {
+        color: #9b4dca;
+      }
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .faq-content.open {
+        max-height: 300px;
+      }
+      .faq-icon {
+        transition: transform 0.3s;
+        flex-shrink: 0;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      /* ── FOOTER ──────────────────────────────────────── */
+      footer {
+        border-top: 1px solid rgba(123, 47, 190, 0.2);
+      }
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(123, 47, 190, 0.3);
+        background: rgba(123, 47, 190, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.5);
+        transition: all 0.2s;
+        text-decoration: none;
+      }
+      .social-icon:hover {
+        border-color: #7b2fbe;
+        background: rgba(123, 47, 190, 0.2);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* ── ANIMATIONS ──────────────────────────────────── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-in-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .fade-in-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .fade-in-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .fade-in-delay-4 {
+        transition-delay: 0.4s;
+      }
+
+      /* ── MOBILE MENU ─────────────────────────────────── */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: rgba(8, 8, 16, 0.98);
+        border-bottom: 1px solid rgba(123, 47, 190, 0.2);
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      /* ── PRICING CARD ────────────────────────────────── */
+      .price-card {
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .price-card:hover {
+        transform: translateY(-6px);
+      }
+      .price-card.featured {
+        background: linear-gradient(
+          135deg,
+          rgba(123, 47, 190, 0.3) 0%,
+          rgba(192, 38, 143, 0.2) 100%
+        );
+        border: 1.5px solid rgba(123, 47, 190, 0.6);
+        box-shadow: 0 20px 60px rgba(123, 47, 190, 0.25);
+      }
+      .price-card.featured:hover {
+        box-shadow: 0 30px 80px rgba(123, 47, 190, 0.4);
+      }
+      .price-card.basic {
+        background: rgba(14, 11, 22, 0.8);
+        border: 1px solid rgba(123, 47, 190, 0.2);
+      }
+      .price-card .badge-featured {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        background: linear-gradient(135deg, #7b2fbe, #c0268f);
+        color: white;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 999px;
+      }
+
+      /* ── HERO TYPING ─────────────────────────────────── */
+      .typing-cursor::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+        color: #c0268f;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* responsive helpers */
+      @media (max-width: 768px) {
+        .process-step::after {
+          display: none;
+        }
+        .hero-glow {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="grain">
+    <div class="mesh-bg" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════ -->
+    <nav id="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="container-bds flex items-center justify-between py-4">
+        <!-- Logo -->
+        <a
+          href="#inicio"
+          class="flex items-center gap-3"
+          aria-label="Broly Development Studio - Inicio"
+        >
+          <!-- SVG Logo abstracto basado en el logo real -->
+          <svg
+            width="38"
+            height="38"
+            viewBox="0 0 38 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#C0268F" />
+                <stop offset="100%" stop-color="#7B2FBE" />
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7B2FBE" />
+                <stop offset="100%" stop-color="#9B4DCA" />
+              </linearGradient>
+            </defs>
+            <!-- Hexágono simplificado con forma de código -->
+            <path
+              d="M14 4L4 10V22L14 28L24 22V10L14 4Z"
+              fill="url(#g1)"
+              opacity="0.9"
+            />
+            <path
+              d="M24 10L34 16V28L24 34L14 28V16L24 10Z"
+              fill="url(#g2)"
+              opacity="0.85"
+            />
+            <path
+              d="M14 16L10 19L14 22M24 16L28 19L24 22"
+              stroke="white"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.9"
+            />
+          </svg>
+          <div>
+            <div
+              style="
+                font-weight: 800;
+                font-size: 1rem;
+                letter-spacing: -0.01em;
+                line-height: 1.1;
+              "
+            >
+              BROLY
+            </div>
+            <div
+              style="
+                font-size: 0.55rem;
+                letter-spacing: 2.5px;
+                color: rgba(255, 255, 255, 0.45);
+                font-weight: 500;
+                text-transform: uppercase;
+              "
+            >
+              DEVELOPMENT STUDIO
+            </div>
+          </div>
+        </a>
+
+        <!-- Nav links desktop -->
+        <nav
+          class="hidden md:flex items-center gap-8"
+          aria-label="Menú principal"
+        >
+          <a
+            href="#servicios"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#por-que"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >¿Por qué nosotros?</a
+          >
+          <a
+            href="#proceso"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >Proceso</a
+          >
+          <a
+            href="#precios"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >Precios</a
+          >
+          <a
+            href="#clientes"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >Clientes</a
+          >
+          <a
+            href="#contacto"
+            class="text-sm font-medium text-white/60 hover:text-white transition-colors"
+            >Contacto</a
+          >
+        </nav>
+
+        <div class="hidden md:flex items-center gap-3">
+          <a
+            href="#contacto"
+            class="btn-primary"
+            style="padding: 10px 22px; font-size: 0.85rem"
+          >
+            Cotización gratis
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="block w-6 h-0.5 bg-white transition-all" id="m1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all" id="m2"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all" id="m3"></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+        <a
+          href="#servicios"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >Servicios</a
+        >
+        <a
+          href="#por-que"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >¿Por qué nosotros?</a
+        >
+        <a
+          href="#proceso"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >Proceso</a
+        >
+        <a
+          href="#precios"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >Precios</a
+        >
+        <a
+          href="#clientes"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >Clientes</a
+        >
+        <a
+          href="#contacto"
+          class="text-sm font-medium text-white/70 hover:text-white"
+          role="menuitem"
+          >Contacto</a
+        >
+        <a
+          href="#contacto"
+          class="btn-primary"
+          style="justify-content: center"
+          role="menuitem"
+          >Cotización gratis</a
+        >
+      </div>
+    </nav>
+
+    <main>
+      <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+      <section id="inicio" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+        <div class="container-bds relative z-10 py-20">
+          <div style="max-width: 820px">
+            <div class="pill fade-in" style="margin-bottom: 1.5rem">
+              <span
+                style="
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: #c0268f;
+                  display: inline-block;
+                  animation: pulse-dot 2s infinite;
+                "
+              ></span>
+              Chiclayo, Perú · Estudio Tecnológico
+            </div>
+
+            <h1
+              id="hero-title"
+              class="fade-in fade-in-delay-1"
+              style="
+                font-size: clamp(2.6rem, 7vw, 5rem);
+                font-weight: 900;
+                line-height: 1.05;
+                letter-spacing: -0.03em;
+                margin-bottom: 1rem;
+              "
+            >
+              Sistemas modernos<br />
+              para <span class="gradient-text" id="typing-word">negocios</span
+              ><br />
+              que crecen.
+            </h1>
+
+            <p
+              class="fade-in fade-in-delay-2"
+              style="
+                font-size: 1.1rem;
+                color: rgba(255, 255, 255, 0.55);
+                max-width: 560px;
+                line-height: 1.7;
+                margin-bottom: 2rem;
+                font-weight: 300;
+              "
+            >
+              Desarrollamos
+              <strong style="color: rgba(255, 255, 255, 0.85); font-weight: 600"
+                >webs, automatizaciones, chatbots con IA</strong
+              >
+              y marketing digital para emprendedores y PYMEs en Chiclayo.
+              Tecnología de nivel empresarial, precio accesible.
+            </p>
+
+            <div
+              class="fade-in fade-in-delay-3 flex flex-wrap gap-3"
+              style="margin-bottom: 3rem"
+            >
+              <a href="#contacto" class="btn-primary">
+                Quiero mi cotización gratis
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#servicios" class="btn-outline">Ver servicios</a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="fade-in fade-in-delay-4 grid grid-cols-3 gap-6"
+              style="max-width: 100vw"
+            >
+              <div>
+                <div class="stat-num gradient-text">5+</div>
+                <div
+                  style="
+                    font-size: 0.75rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    font-weight: 500;
+                    margin-top: 4px;
+                  "
+                >
+                  Proyectos<br />entregados
+                </div>
+              </div>
+              <div
+                style="
+                  border-left: 1px solid rgba(123, 47, 190, 0.2);
+                  padding-left: 1.5rem;
+                "
+              >
+                <div class="stat-num gradient-text">4</div>
+                <div
+                  style="
+                    font-size: 0.75rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    font-weight: 500;
+                    margin-top: 4px;
+                  "
+                >
+                  Servicios<br />especializados
+                </div>
+              </div>
+              <div
+                style="
+                  border-left: 1px solid rgba(123, 47, 190, 0.2);
+                  padding-left: 1.5rem;
+                "
+              >
+                <div class="stat-num gradient-text">24/7</div>
+                <div
+                  style="
+                    font-size: 0.75rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    font-weight: 500;
+                    margin-top: 4px;
+                  "
+                >
+                  Soporte<br />activo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         LOGOS CLIENTES
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="clientes"
+        aria-labelledby="clients-title"
+        style="
+          padding: 4rem 0;
+          border-top: 1px solid rgba(123, 47, 190, 0.1);
+          border-bottom: 1px solid rgba(123, 47, 190, 0.1);
+          overflow: hidden;
+        "
+      >
+        <div
+          class="container-bds"
+          style="margin-bottom: 1.5rem; text-align: center"
+        >
+          <p
+            id="clients-title"
+            style="
+              font-size: 0.7rem;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.3);
+              font-weight: 600;
+            "
+          >
+            Empresas que confían en nosotros
+          </p>
+        </div>
+        <div style="position: relative; overflow: hidden">
+          <!-- Fades laterales -->
+          <div
+            style="
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              width: 100px;
+              background: linear-gradient(to right, #080810, transparent);
+              z-index: 2;
+              pointer-events: none;
+            "
+          ></div>
+          <div
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              width: 100px;
+              background: linear-gradient(to left, #080810, transparent);
+              z-index: 2;
+              pointer-events: none;
+            "
+          ></div>
+
+          <div class="logos-track" role="list" aria-label="Empresas clientes">
+            <!-- Aquí van los logos. Reemplaza cada .logo-placeholder con tu <img src="logo.png" alt="Empresa"> -->
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+              Tu logo aquí
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Empresa 2
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              Startup 3
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              Negocio 4
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+              </svg>
+              Cliente 5
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+              Empresa 6
+            </div>
+            <!-- Duplicate for infinite loop -->
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+              Tu logo aquí
+            </div>
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Empresa 2
+            </div>
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              Startup 3
+            </div>
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              Negocio 4
+            </div>
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+              </svg>
+              Cliente 5
+            </div>
+            <div class="logo-placeholder" role="listitem" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+              Empresa 6
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         SERVICIOS
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="servicios"
+        aria-labelledby="services-title"
+        style="padding: 7rem 0"
+      >
+        <div class="container-bds">
+          <div style="text-align: center; margin-bottom: 4rem">
+            <div class="pill fade-in" style="margin: 0 auto 1rem">
+              Nuestros servicios
+            </div>
+            <h2
+              id="services-title"
+              class="section-title fade-in fade-in-delay-1"
+            >
+              Todo lo que tu negocio<br />
+              <span class="gradient-text">necesita para crecer</span>
+            </h2>
+            <p
+              class="fade-in fade-in-delay-2"
+              style="
+                color: rgba(255, 255, 255, 0.45);
+                max-width: 500px;
+                margin: 1rem auto 0;
+                line-height: 1.7;
+                font-size: 0.95rem;
+                font-weight: 300;
+              "
+            >
+              No somos una agencia genérica. Cada servicio está diseñado para
+              generar resultados reales en el mercado chiclayano.
+            </p>
+          </div>
+
+          <div
+            class="grid gap-5"
+            style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
+          >
+            <!-- Card 1 -->
+            <article
+              class="grad-border service-card fade-in"
+              style="padding: 2rem"
+            >
+              <div class="service-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9B4DCA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <h3
+                style="
+                  font-size: 1.15rem;
+                  font-weight: 700;
+                  margin-bottom: 0.7rem;
+                "
+              >
+                Desarrollo Web
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.2rem;
+                "
+              >
+                Sitios web profesionales, e-commerce, sistemas con panel admin,
+                landing pages y aplicaciones web a medida. Rápidas, modernas y
+                orientadas a convertir.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Diseño responsive + SEO
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Panel de administración
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Desde S/ 800
+                </li>
+              </ul>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="grad-border service-card fade-in fade-in-delay-1"
+              style="padding: 2rem"
+            >
+              <div class="service-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#C0268F"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 20h9" />
+                  <path
+                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                  />
+                </svg>
+              </div>
+              <h3
+                style="
+                  font-size: 1.15rem;
+                  font-weight: 700;
+                  margin-bottom: 0.7rem;
+                "
+              >
+                Automatizaciones
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.2rem;
+                "
+              >
+                Elimina tareas repetitivas. Flujos automáticos de WhatsApp,
+                reportes diarios, facturación electrónica SUNAT, integración de
+                sistemas y más.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >n8n, Make, WhatsApp API
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Integración SUNAT
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Desde S/ 700
+                </li>
+              </ul>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="grad-border service-card fade-in fade-in-delay-2"
+              style="padding: 2rem"
+            >
+              <div class="service-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9B4DCA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <h3
+                style="
+                  font-size: 1.15rem;
+                  font-weight: 700;
+                  margin-bottom: 0.7rem;
+                "
+              >
+                Chatbot & IA
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.2rem;
+                "
+              >
+                Asistentes inteligentes con Google Gemini / GPT en WhatsApp y
+                web. Atienden, responden, toman pedidos y capturan leads las 24
+                horas del día.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >WhatsApp + Web
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Memoria + IA generativa
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #9b4dca;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Desde S/ 1,200
+                </li>
+              </ul>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="grad-border service-card fade-in fade-in-delay-3"
+              style="padding: 2rem"
+            >
+              <div class="service-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#C0268F"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h3
+                style="
+                  font-size: 1.15rem;
+                  font-weight: 700;
+                  margin-bottom: 0.7rem;
+                "
+              >
+                Marketing Digital & Datos
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.2rem;
+                "
+              >
+                Landing pages de alta conversión, posicionamiento SEO,
+                definición de KPIs y análisis de datos para decisiones basadas
+                en números reales.
+              </p>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >SEO + Google Analytics
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >KPIs + dashboards
+                </li>
+                <li
+                  style="
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                >
+                  <span
+                    style="
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #c0268f;
+                      flex-shrink: 0;
+                    "
+                  ></span
+                  >Desde S/ 600
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         POR QUÉ ELEGIRNOS
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="por-que"
+        aria-labelledby="why-title"
+        style="padding: 6rem 0; background: rgba(123, 47, 190, 0.03)"
+      >
+        <div class="container-bds">
+          <div
+            class="grid gap-16 items-center"
+            style="grid-template-columns: 1fr 1fr"
+          >
+            <!-- Left -->
+            <div>
+              <div class="pill fade-in" style="margin-bottom: 1rem">
+                ¿Por qué elegirnos?
+              </div>
+              <h2
+                id="why-title"
+                class="section-title fade-in fade-in-delay-1"
+                style="margin-bottom: 1rem"
+              >
+                Tu competencia ya<br />
+                <span class="gradient-text">está en digital.</span>
+              </h2>
+              <p
+                class="fade-in fade-in-delay-2"
+                style="
+                  color: rgba(255, 255, 255, 0.45);
+                  line-height: 1.75;
+                  font-size: 0.93rem;
+                  font-weight: 300;
+                  margin-bottom: 2rem;
+                  max-width: 420px;
+                "
+              >
+                Somos el estudio tecnológico local que combina lo mejor de ambos
+                mundos: la capacidad técnica de Lima con el conocimiento y
+                cercanía del mercado de Chiclayo.
+              </p>
+              <a
+                href="https://wa.me/51999999999?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios"
+                class="btn-primary fade-in fade-in-delay-3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Habla con nosotros hoy
+              </a>
+            </div>
+
+            <!-- Right: items -->
+            <div style="display: flex; flex-direction: column; gap: 0.875rem">
+              <div class="why-item fade-in">
+                <div class="why-num" aria-hidden="true">01</div>
+                <div>
+                  <h3
+                    style="
+                      font-weight: 700;
+                      font-size: 0.95rem;
+                      margin-bottom: 0.35rem;
+                    "
+                  >
+                    Locales y cercanos
+                  </h3>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.82rem;
+                      line-height: 1.6;
+                      font-weight: 300;
+                    "
+                  >
+                    Estamos en Chiclayo. Te reunimos en persona, conocemos tu
+                    mercado y respondemos el WhatsApp.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-in fade-in-delay-1">
+                <div class="why-num" aria-hidden="true">02</div>
+                <div>
+                  <h3
+                    style="
+                      font-weight: 700;
+                      font-size: 0.95rem;
+                      margin-bottom: 0.35rem;
+                    "
+                  >
+                    Tecnología real, no plantillas
+                  </h3>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.82rem;
+                      line-height: 1.6;
+                      font-weight: 300;
+                    "
+                  >
+                    Construimos a medida con Node.js, Angular, PostgreSQL e IA.
+                    Nada genérico.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-in fade-in-delay-2">
+                <div class="why-num" aria-hidden="true">03</div>
+                <div>
+                  <h3
+                    style="
+                      font-weight: 700;
+                      font-size: 0.95rem;
+                      margin-bottom: 0.35rem;
+                    "
+                  >
+                    Resultados medibles
+                  </h3>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.82rem;
+                      line-height: 1.6;
+                      font-weight: 300;
+                    "
+                  >
+                    No vendemos solo código. Cada proyecto tiene métricas
+                    claras: más ventas, menos tiempo manual.
+                  </p>
+                </div>
+              </div>
+              <div class="why-item fade-in fade-in-delay-3">
+                <div class="why-num" aria-hidden="true">04</div>
+                <div>
+                  <h3
+                    style="
+                      font-weight: 700;
+                      font-size: 0.95rem;
+                      margin-bottom: 0.35rem;
+                    "
+                  >
+                    No quedas solo
+                  </h3>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.82rem;
+                      line-height: 1.6;
+                      font-weight: 300;
+                    "
+                  >
+                    30 días de garantía post-entrega y planes de mantenimiento
+                    mensual. Siempre disponibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         PROCESO
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="proceso"
+        aria-labelledby="process-title"
+        style="padding: 7rem 0"
+      >
+        <div class="container-bds">
+          <div style="text-align: center; margin-bottom: 4rem">
+            <div class="pill fade-in" style="margin: 0 auto 1rem">
+              Nuestro proceso
+            </div>
+            <h2
+              id="process-title"
+              class="section-title fade-in fade-in-delay-1"
+            >
+              Del <span class="gradient-text">diagnóstico</span><br />al
+              lanzamiento
+            </h2>
+            <p
+              class="fade-in fade-in-delay-2"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 0.9rem;
+                margin-top: 0.75rem;
+                font-weight: 300;
+              "
+            >
+              4 pasos simples, plazos reales, comunicación constante.
+            </p>
+          </div>
+
+          <div class="grid gap-6" style="grid-template-columns: repeat(4, 1fr)">
+            <div class="process-step fade-in">
+              <div class="step-circle">01</div>
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Diagnóstico
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 0.78rem;
+                  line-height: 1.6;
+                  font-weight: 300;
+                "
+              >
+                Reunión de 30 min gratis para entender tu negocio y sus
+                necesidades reales.
+              </p>
+            </div>
+            <div class="process-step fade-in fade-in-delay-1">
+              <div class="step-circle">02</div>
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Propuesta
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 0.78rem;
+                  line-height: 1.6;
+                  font-weight: 300;
+                "
+              >
+                Cotización detallada con funcionalidades, plazos y condiciones
+                claras.
+              </p>
+            </div>
+            <div class="process-step fade-in fade-in-delay-2">
+              <div class="step-circle">03</div>
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Desarrollo
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 0.78rem;
+                  line-height: 1.6;
+                  font-weight: 300;
+                "
+              >
+                Construcción del sistema con avances periódicos y comunicación
+                directa.
+              </p>
+            </div>
+            <div class="process-step fade-in fade-in-delay-3">
+              <div class="step-circle">04</div>
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Entrega & Soporte
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 0.78rem;
+                  line-height: 1.6;
+                  font-weight: 300;
+                "
+              >
+                Lanzamiento, capacitación y 30 días de soporte incluido sin
+                costo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         PRECIOS
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="precios"
+        aria-labelledby="prices-title"
+        style="padding: 7rem 0; background: rgba(123, 47, 190, 0.03)"
+      >
+        <div class="container-bds">
+          <div style="text-align: center; margin-bottom: 4rem">
+            <div class="pill fade-in" style="margin: 0 auto 1rem">Precios</div>
+            <h2 id="prices-title" class="section-title fade-in fade-in-delay-1">
+              Inversión <span class="gradient-text">transparente</span>
+            </h2>
+            <p
+              class="fade-in fade-in-delay-2"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 0.9rem;
+                margin-top: 0.75rem;
+                font-weight: 300;
+              "
+            >
+              Precios reales para el mercado chiclayano. Sin sorpresas.
+            </p>
+          </div>
+
+          <div
+            class="grid gap-6 fade-in"
+            style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
+          >
+            <!-- Básico -->
+            <article class="price-card basic" aria-label="Plan básico">
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 1rem;
+                  margin-bottom: 0.4rem;
+                  color: rgba(255, 255, 255, 0.7);
+                "
+              >
+                Web Esencial
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: 4px;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <span style="font-size: 2.4rem; font-weight: 900">S/ 800</span>
+                <span style="color: rgba(255, 255, 255, 0.3); font-size: 0.8rem"
+                  >pago único</span
+                >
+              </div>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  margin-bottom: 1.75rem;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Hasta 5 páginas
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Diseño responsive + SSL
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  SEO básico + Formulario
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Botón WhatsApp flotante
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Hosting + Dominio 1er año
+                </li>
+              </ul>
+              <a
+                href="#contacto"
+                class="btn-outline"
+                style="width: 100%; justify-content: center"
+                >Empezar</a
+              >
+            </article>
+
+            <!-- Destacado -->
+            <article class="price-card featured" aria-label="Plan recomendado">
+              <div class="badge-featured" aria-label="Plan recomendado">
+                Más popular
+              </div>
+              <h3
+                style="font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem"
+              >
+                Suite Digital
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: 4px;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <span
+                  style="font-size: 2.4rem; font-weight: 900"
+                  class="gradient-text"
+                  >S/ 3,500</span
+                >
+                <span
+                  style="color: rgba(255, 255, 255, 0.35); font-size: 0.8rem"
+                  >pago único</span
+                >
+              </div>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  margin-bottom: 1.75rem;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Web completa + panel admin
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Automatización de procesos
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Chatbot IA en WhatsApp
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  SEO + Analytics + KPIs
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  1 mes de soporte incluido
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C0268F"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Capacitación personalizada
+                </li>
+              </ul>
+              <a
+                href="#contacto"
+                class="btn-primary"
+                style="width: 100%; justify-content: center"
+                >Quiero este plan</a
+              >
+            </article>
+
+            <!-- Mantenimiento -->
+            <article class="price-card basic" aria-label="Plan mantenimiento">
+              <h3
+                style="
+                  font-weight: 700;
+                  font-size: 1rem;
+                  margin-bottom: 0.4rem;
+                  color: rgba(255, 255, 255, 0.7);
+                "
+              >
+                Mantenimiento
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: 4px;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <span style="font-size: 2.4rem; font-weight: 900">S/ 400</span>
+                <span style="color: rgba(255, 255, 255, 0.3); font-size: 0.8rem"
+                  >/mes</span
+                >
+              </div>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  margin-bottom: 1.75rem;
+                "
+              >
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Soporte web + automatizaciones
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Backups + actualizaciones
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Ajuste de bot mensual
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Reporte mensual de métricas
+                </li>
+              </ul>
+              <a
+                href="#contacto"
+                class="btn-outline"
+                style="width: 100%; justify-content: center"
+                >Consultar</a
+              >
+            </article>
+          </div>
+
+          <p
+            class="fade-in"
+            style="
+              text-align: center;
+              margin-top: 2rem;
+              color: rgba(255, 255, 255, 0.3);
+              font-size: 0.8rem;
+              font-weight: 300;
+            "
+          >
+            ¿Necesitas algo personalizado?
+            <a
+              href="#contacto"
+              style="color: #9b4dca; text-decoration: none; font-weight: 600"
+              >Contáctanos para una cotización a tu medida →</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         TESTIMONIOS
+    ═══════════════════════════════════════════════════ -->
+      <section aria-labelledby="testimonials-title" style="padding: 7rem 0">
+        <div class="container-bds">
+          <div style="text-align: center; margin-bottom: 3.5rem">
+            <div class="pill fade-in" style="margin: 0 auto 1rem">
+              Testimonios
+            </div>
+            <h2
+              id="testimonials-title"
+              class="section-title fade-in fade-in-delay-1"
+            >
+              Lo que dicen<br /><span class="gradient-text"
+                >nuestros clientes</span
+              >
+            </h2>
+          </div>
+
+          <div
+            class="grid gap-5 fade-in"
+            style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
+          >
+            <article
+              class="testimonial-card"
+              aria-label="Testimonio de cliente"
+            >
+              <div
+                style="display: flex; gap: 3px; margin-bottom: 1rem"
+                aria-label="5 estrellas"
+              >
+                <span style="color: #f5a623" aria-hidden="true">★★★★★</span>
+              </div>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.6);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.25rem;
+                  font-style: italic;
+                "
+              >
+                "Broly Development Studio transformó mi restaurante. Ahora mis
+                pedidos por WhatsApp se procesan solos y el bot atiende a mis
+                clientes las 24 horas. Increíble."
+              </p>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <div
+                  style="
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #7b2fbe, #c0268f);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 0.9rem;
+                  "
+                >
+                  M
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.85rem">
+                    María González
+                  </div>
+                  <div
+                    style="color: rgba(255, 255, 255, 0.35); font-size: 0.75rem"
+                  >
+                    Restaurante El Rincón · Chiclayo
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="testimonial-card"
+              aria-label="Testimonio de cliente"
+            >
+              <div
+                style="display: flex; gap: 3px; margin-bottom: 1rem"
+                aria-label="5 estrellas"
+              >
+                <span style="color: #f5a623" aria-hidden="true">★★★★★</span>
+              </div>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.6);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.25rem;
+                  font-style: italic;
+                "
+              >
+                "Tenía miedo de invertir en tecnología, pero el equipo me
+                explicó todo paso a paso. Mi web ahora aparece en Google y
+                recibo consultas todos los días."
+              </p>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <div
+                  style="
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #c0268f, #7b2fbe);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 0.9rem;
+                  "
+                >
+                  C
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.85rem">
+                    Carlos Ramírez
+                  </div>
+                  <div
+                    style="color: rgba(255, 255, 255, 0.35); font-size: 0.75rem"
+                  >
+                    Ferretería Central · Chiclayo
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="testimonial-card"
+              aria-label="Testimonio de cliente"
+            >
+              <div
+                style="display: flex; gap: 3px; margin-bottom: 1rem"
+                aria-label="5 estrellas"
+              >
+                <span style="color: #f5a623" aria-hidden="true">★★★★★</span>
+              </div>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.6);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-bottom: 1.25rem;
+                  font-style: italic;
+                "
+              >
+                "La automatización de mis reportes diarios me ahorra 2 horas
+                cada mañana. Ese tiempo lo uso ahora para atender más clientes.
+                Vale cada sol invertido."
+              </p>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <div
+                  style="
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #7b2fbe, #9b4dca);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 0.9rem;
+                  "
+                >
+                  L
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.85rem">
+                    Lucía Mendoza
+                  </div>
+                  <div
+                    style="color: rgba(255, 255, 255, 0.35); font-size: 0.75rem"
+                  >
+                    Distribuidora Norte · Chiclayo
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════ -->
+      <section
+        aria-labelledby="faq-title"
+        style="padding: 6rem 0; background: rgba(123, 47, 190, 0.03)"
+      >
+        <div class="container-bds">
+          <div
+            class="grid gap-16 items-start"
+            style="grid-template-columns: 1fr 1.4fr"
+          >
+            <div>
+              <div class="pill fade-in" style="margin-bottom: 1rem">FAQ</div>
+              <h2 id="faq-title" class="section-title fade-in fade-in-delay-1">
+                Preguntas<br /><span class="gradient-text">frecuentes</span>
+              </h2>
+              <p
+                class="fade-in fade-in-delay-2"
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 0.88rem;
+                  line-height: 1.7;
+                  font-weight: 300;
+                  margin-top: 1rem;
+                "
+              >
+                ¿Tienes otra pregunta? Escríbenos directamente por WhatsApp y te
+                respondemos en minutos.
+              </p>
+              <a
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline fade-in fade-in-delay-3"
+                style="margin-top: 1.5rem; display: inline-flex"
+              >
+                Preguntar por WhatsApp
+              </a>
+            </div>
+
+            <div role="list">
+              <div class="faq-item" role="listitem">
+                <button
+                  class="faq-btn"
+                  aria-expanded="false"
+                  onclick="toggleFaq(this)"
+                >
+                  ¿Cuánto tiempo tarda un proyecto?
+                  <svg
+                    class="faq-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div class="faq-content" role="region">
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.85rem;
+                      line-height: 1.7;
+                      padding-bottom: 1rem;
+                      font-weight: 300;
+                    "
+                  >
+                    Depende del alcance. Una web institucional puede estar lista
+                    en 2–3 semanas. Una suite completa con automatizaciones y
+                    chatbot puede tomar 4–6 semanas. Siempre te damos un
+                    cronograma exacto antes de iniciar.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" role="listitem">
+                <button
+                  class="faq-btn"
+                  aria-expanded="false"
+                  onclick="toggleFaq(this)"
+                >
+                  ¿Necesito pagar todo por adelantado?
+                  <svg
+                    class="faq-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div class="faq-content" role="region">
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.85rem;
+                      line-height: 1.7;
+                      padding-bottom: 1rem;
+                      font-weight: 300;
+                    "
+                  >
+                    No. Trabajamos con 3 cuotas: 50% al inicio, 25% al presentar
+                    el avance del 70%, y el 25% restante al entregar el proyecto
+                    finalizado y capacitarte. Aceptamos transferencia, Yape y
+                    Plin.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" role="listitem">
+                <button
+                  class="faq-btn"
+                  aria-expanded="false"
+                  onclick="toggleFaq(this)"
+                >
+                  ¿Puedo ver avances durante el desarrollo?
+                  <svg
+                    class="faq-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div class="faq-content" role="region">
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.85rem;
+                      line-height: 1.7;
+                      padding-bottom: 1rem;
+                      font-weight: 300;
+                    "
+                  >
+                    Sí. Compartimos un enlace de vista previa durante el
+                    desarrollo para que revises el avance en tiempo real. La
+                    comunicación es directa por WhatsApp con el equipo, sin
+                    intermediarios.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" role="listitem">
+                <button
+                  class="faq-btn"
+                  aria-expanded="false"
+                  onclick="toggleFaq(this)"
+                >
+                  ¿Qué pasa si ya tengo un logo y marca?
+                  <svg
+                    class="faq-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div class="faq-content" role="region">
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.85rem;
+                      line-height: 1.7;
+                      padding-bottom: 1rem;
+                      font-weight: 300;
+                    "
+                  >
+                    Perfecto. Usamos tus colores, fuentes y logos existentes
+                    para mantener coherencia de marca. Si no tienes, también
+                    podemos ayudarte con branding básico.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" role="listitem">
+                <button
+                  class="faq-btn"
+                  aria-expanded="false"
+                  onclick="toggleFaq(this)"
+                >
+                  ¿Trabajan solo en Chiclayo?
+                  <svg
+                    class="faq-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div class="faq-content" role="region">
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.45);
+                      font-size: 0.85rem;
+                      line-height: 1.7;
+                      padding-bottom: 1rem;
+                      font-weight: 300;
+                    "
+                  >
+                    Nuestra base es Chiclayo, pero atendemos clientes a nivel
+                    nacional. Las reuniones pueden ser presenciales en Chiclayo
+                    o virtuales por Zoom / WhatsApp para el resto del Perú.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+         CONTACTO / CTA
+    ═══════════════════════════════════════════════════ -->
+      <section
+        id="contacto"
+        aria-labelledby="contact-title"
+        style="padding: 7rem 0"
+      >
+        <div class="container-bds">
+          <div
+            class="grad-border"
+            style="
+              padding: 4rem 3rem;
+              text-align: center;
+              max-width: 760px;
+              margin: 0 auto;
+            "
+          >
+            <div class="pill fade-in" style="margin: 0 auto 1.25rem">
+              Hablemos
+            </div>
+            <h2
+              id="contact-title"
+              class="section-title fade-in fade-in-delay-1"
+              style="margin-bottom: 0.75rem"
+            >
+              Da el paso digital <br /><span class="gradient-text"
+                >hoy, no mañana.</span
+              >
+            </h2>
+            <p
+              class="fade-in fade-in-delay-2"
+              style="
+                color: rgba(255, 255, 255, 0.45);
+                font-size: 0.93rem;
+                line-height: 1.7;
+                font-weight: 300;
+                max-width: 500px;
+                margin: 0 auto 2.5rem;
+              "
+            >
+              La primera reunión es
+              <strong style="color: rgba(255, 255, 255, 0.7)"
+                >gratis y sin compromiso</strong
+              >. Analizamos tu negocio y te decimos exactamente qué necesitas.
+            </p>
+
+            <form
+              action="#"
+              method="POST"
+              class="fade-in fade-in-delay-3"
+              style="
+                display: grid;
+                gap: 1rem;
+                max-width: 520px;
+                margin: 0 auto;
+                text-align: left;
+              "
+              onsubmit="handleSubmit(event)"
+              aria-label="Formulario de contacto"
+            >
+              <div
+                style="display: grid; gap: 1rem; grid-template-columns: 1fr 1fr"
+              >
+                <div>
+                  <label
+                    for="nombre"
+                    style="
+                      display: block;
+                      font-size: 0.78rem;
+                      font-weight: 600;
+                      color: rgba(255, 255, 255, 0.5);
+                      margin-bottom: 6px;
+                      letter-spacing: 0.5px;
+                    "
+                    >Nombre *</label
+                  >
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    class="form-input"
+                    placeholder="Tu nombre"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="empresa"
+                    style="
+                      display: block;
+                      font-size: 0.78rem;
+                      font-weight: 600;
+                      color: rgba(255, 255, 255, 0.5);
+                      margin-bottom: 6px;
+                      letter-spacing: 0.5px;
+                    "
+                    >Negocio</label
+                  >
+                  <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    class="form-input"
+                    placeholder="Nombre de tu negocio"
+                    autocomplete="organization"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="whatsapp"
+                  style="
+                    display: block;
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    color: rgba(255, 255, 255, 0.5);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.5px;
+                  "
+                  >WhatsApp *</label
+                >
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  class="form-input"
+                  placeholder="+51 999 999 999"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+              <div>
+                <label
+                  for="servicio"
+                  style="
+                    display: block;
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    color: rgba(255, 255, 255, 0.5);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.5px;
+                  "
+                  >¿Qué necesitas?</label
+                >
+                <select
+                  id="servicio"
+                  name="servicio"
+                  class="form-input"
+                  style="cursor: pointer"
+                >
+                  <option value="" style="background: #0e0b16">
+                    Selecciona un servicio
+                  </option>
+                  <option value="web" style="background: #0e0b16">
+                    Desarrollo Web
+                  </option>
+                  <option value="auto" style="background: #0e0b16">
+                    Automatización
+                  </option>
+                  <option value="chatbot" style="background: #0e0b16">
+                    Chatbot / IA
+                  </option>
+                  <option value="marketing" style="background: #0e0b16">
+                    Marketing Digital
+                  </option>
+                  <option value="suite" style="background: #0e0b16">
+                    Suite Completa
+                  </option>
+                  <option value="otro" style="background: #0e0b16">
+                    Otro / No sé aún
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="mensaje"
+                  style="
+                    display: block;
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    color: rgba(255, 255, 255, 0.5);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.5px;
+                  "
+                  >Cuéntanos tu proyecto</label
+                >
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="3"
+                  class="form-input"
+                  placeholder="¿Qué quieres lograr con tu producto digital?"
+                  style="resize: vertical"
+                ></textarea>
+              </div>
+
+              <div
+                id="form-success"
+                style="
+                  display: none;
+                  padding: 12px;
+                  border-radius: 10px;
+                  background: rgba(37, 211, 102, 0.1);
+                  border: 1px solid rgba(37, 211, 102, 0.3);
+                  color: rgba(37, 211, 102, 0.9);
+                  font-size: 0.85rem;
+                  text-align: center;
+                "
+                role="alert"
+                aria-live="polite"
+              >
+                ✓ ¡Mensaje enviado! Te contactamos en menos de 24 horas.
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary"
+                style="justify-content: center; font-size: 1rem; padding: 16px"
+              >
+                Quiero mi diagnóstico gratuito
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              <p
+                style="
+                  text-align: center;
+                  font-size: 0.72rem;
+                  color: rgba(255, 255, 255, 0.25);
+                  font-weight: 300;
+                "
+              >
+                También puedes escribirnos directamente por
+                <a
+                  href="https://wa.me/51999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: #9b4dca; text-decoration: none"
+                  >WhatsApp</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+    <footer role="contentinfo" style="padding: 4rem 0 2rem">
+      <div class="container-bds">
+        <div
+          class="grid gap-10"
+          style="grid-template-columns: 1.5fr 1fr 1fr 1fr; margin-bottom: 3rem"
+        >
+          <!-- Brand -->
+          <div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 1rem;
+              "
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 38 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient id="fg1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#C0268F" />
+                    <stop offset="100%" stop-color="#7B2FBE" />
+                  </linearGradient>
+                  <linearGradient id="fg2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#7B2FBE" />
+                    <stop offset="100%" stop-color="#9B4DCA" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M14 4L4 10V22L14 28L24 22V10L14 4Z"
+                  fill="url(#fg1)"
+                  opacity="0.9"
+                />
+                <path
+                  d="M24 10L34 16V28L24 34L14 28V16L24 10Z"
+                  fill="url(#fg2)"
+                  opacity="0.85"
+                />
+                <path
+                  d="M14 16L10 19L14 22M24 16L28 19L24 22"
+                  stroke="white"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  opacity="0.9"
+                />
+              </svg>
+              <div>
+                <div
+                  style="
+                    font-weight: 800;
+                    font-size: 0.95rem;
+                    letter-spacing: -0.01em;
+                  "
+                >
+                  BROLY
+                </div>
+                <div
+                  style="
+                    font-size: 0.5rem;
+                    letter-spacing: 2.5px;
+                    color: rgba(255, 255, 255, 0.35);
+                    text-transform: uppercase;
+                  "
+                >
+                  DEVELOPMENT STUDIO
+                </div>
+              </div>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.35);
+                font-size: 0.82rem;
+                line-height: 1.7;
+                font-weight: 300;
+                max-width: 240px;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Sistemas modernos para desafíos complejos. Chiclayo, Perú.
+            </p>
+            <!-- Redes sociales -->
+            <div
+              style="display: flex; gap: 0.5rem"
+              role="list"
+              aria-label="Redes sociales de Broly Development Studio"
+            >
+              <!-- Facebook -->
+              <a
+                href="https://facebook.com/brolydevelopment"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="Visita nuestro Facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/brolydevelopment"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="Visita nuestro Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <!-- TikTok -->
+              <a
+                href="https://tiktok.com/@brolydevelopment"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                role="listitem"
+                aria-label="Visita nuestro TikTok"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Servicios -->
+          <nav aria-label="Servicios">
+            <h3
+              style="
+                font-weight: 700;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.4);
+                margin-bottom: 1.1rem;
+              "
+            >
+              Servicios
+            </h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+              "
+            >
+              <li>
+                <a
+                  href="#servicios"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.2s;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicios"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.2s;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Automatizaciones</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicios"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.2s;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Chatbot & IA</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicios"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.2s;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Marketing Digital</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#precios"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                    transition: color 0.2s;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Precios</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Empresa -->
+          <nav aria-label="Empresa">
+            <h3
+              style="
+                font-weight: 700;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.4);
+                margin-bottom: 1.1rem;
+              "
+            >
+              Empresa
+            </h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+              "
+            >
+              <li>
+                <a
+                  href="#por-que"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#proceso"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Proceso</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#clientes"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Clientes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contacto"
+                  style="
+                    color: rgba(255, 255, 255, 0.45);
+                    font-size: 0.83rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  onmouseover="this.style.color = 'white'"
+                  onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Contacto -->
+          <address style="font-style: normal">
+            <h3
+              style="
+                font-weight: 700;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.4);
+                margin-bottom: 1.1rem;
+              "
+            >
+              Contacto
+            </h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+              "
+            >
+              <li style="display: flex; gap: 8px; align-items: flex-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#7B2FBE"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="flex-shrink: 0; margin-top: 2px"
+                  aria-hidden="true"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span
+                  style="
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 0.82rem;
+                    font-weight: 300;
+                  "
+                  >Chiclayo, Lambayeque, Perú</span
+                >
+              </li>
+              <li style="display: flex; gap: 8px; align-items: center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#7B2FBE"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 6 6l.27-.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"
+                  />
+                </svg>
+                <a
+                  href="https://wa.me/51999999999"
+                  style="
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 0.82rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  >+51 999 999 999</a
+                >
+              </li>
+              <li style="display: flex; gap: 8px; align-items: center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#7B2FBE"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <a
+                  href="mailto:contacto@brolydevelopment.com"
+                  style="
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 0.82rem;
+                    text-decoration: none;
+                    font-weight: 300;
+                  "
+                  >contacto@brolydevelopment.com</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
+
+        <!-- Bottom bar -->
+        <div
+          style="
+            border-top: 1px solid rgba(123, 47, 190, 0.15);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+          "
+        >
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.2);
+              font-size: 0.75rem;
+              font-weight: 300;
+            "
+          >
+            © 2025 Broly Development Studio. Todos los derechos reservados.
+          </p>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.2);
+              font-size: 0.75rem;
+              font-weight: 300;
+            "
+          >
+            Hecho con ❤️ en Chiclayo, Perú
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       WHATSAPP FLOTANTE
+  ═══════════════════════════════════════════════════ -->
+    <a
+      href="https://wa.me/51936787248?text=Hola%2C%20me%20interesan%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20brindarme%20informaci%C3%B3n%3F"
+      class="wa-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contáctanos por WhatsApp"
+      title="Escríbenos por WhatsApp"
+    >
+      <div class="wa-tooltip" role="tooltip">Escríbenos ahora</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="white"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+
+    <!-- ═══════════════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════════════ -->
+    <script>
+      // ── NAV SCROLL ────────────────────────────────────────
+      const navbar = document.getElementById("navbar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 40);
+        },
+        { passive: true },
+      );
+
+      // ── MOBILE MENU ───────────────────────────────────────
+      const toggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const [m1, m2, m3] = [
+        document.getElementById("m1"),
+        document.getElementById("m2"),
+        document.getElementById("m3"),
+      ];
+
+      toggle.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+        mobileMenu.setAttribute("aria-hidden", !open);
+        m1.style.transform = open ? "translateY(8px) rotate(45deg)" : "";
+        m2.style.opacity = open ? "0" : "1";
+        m3.style.transform = open ? "translateY(-8px) rotate(-45deg)" : "";
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          toggle.setAttribute("aria-expanded", false);
+          mobileMenu.setAttribute("aria-hidden", true);
+          [m1, m2, m3].forEach(
+            (m) => (m.style.transform = m.style.opacity = ""),
+          );
+        });
+      });
+
+      // ── SCROLL REVEAL ─────────────────────────────────────
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+
+      // ── TYPING HERO ───────────────────────────────────────
+      const words = [
+        "negocios",
+        "emprendedores",
+        "restaurantes",
+        "tiendas",
+        "clínicas",
+        "ferreterías",
+      ];
+      let wIdx = 0,
+        cIdx = 0,
+        deleting = false;
+      const typingEl = document.getElementById("typing-word");
+
+      function typeEffect() {
+        const current = words[wIdx];
+        if (!deleting) {
+          typingEl.textContent = current.slice(0, ++cIdx);
+          if (cIdx === current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1800);
+            return;
+          }
+        } else {
+          typingEl.textContent = current.slice(0, --cIdx);
+          if (cIdx === 0) {
+            deleting = false;
+            wIdx = (wIdx + 1) % words.length;
+          }
+        }
+        setTimeout(typeEffect, deleting ? 60 : 90);
+      }
+      setTimeout(typeEffect, 1200);
+
+      // ── FAQ ACCORDION ─────────────────────────────────────
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const content = item.querySelector(".faq-content");
+        const isOpen = item.classList.contains("active");
+
+        // Close all
+        document.querySelectorAll(".faq-item").forEach((i) => {
+          i.classList.remove("active");
+          i.querySelector(".faq-content").classList.remove("open");
+          i.querySelector(".faq-btn").setAttribute("aria-expanded", false);
+        });
+
+        if (!isOpen) {
+          item.classList.add("active");
+          content.classList.add("open");
+          btn.setAttribute("aria-expanded", true);
+        }
+      }
+
+      // ── FORM SUBMIT ───────────────────────────────────────
+      function handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const nombre = form.nombre.value.trim();
+        const whatsapp = form.whatsapp.value.trim();
+        const servicio = form.servicio.value;
+        const mensaje = form.mensaje.value.trim();
+
+        // Build WhatsApp message
+        const text = encodeURIComponent(
+          `¡Hola! Soy ${nombre}.\n` +
+            `Servicio de interés: ${servicio || "No especificado"}\n` +
+            (mensaje ? `Mensaje: ${mensaje}` : ""),
+        );
+
+        console.log({nombre, whatsapp, servicio, mensaje, text});
+
+        // Show success
+        document.getElementById("form-success").style.display = "block";
+        form.reset();
+
+        // Redirect to WhatsApp
+        /* setTimeout(() => {
+          window.open(
+            `https://wa.me/51999999999?text=${text}`,
+            "_blank",
+            "noopener,noreferrer",
+          );
+        }, 600); */
+      }
+
+      // ── SMOOTH SCROLL ─────────────────────────────────────
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // ── PULSE DOT KEYFRAME (via JS since @keyframes in style scope) ──────
+      const style = document.createElement("style");
+      style.textContent = `
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(0.8); }
+      }
+    `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

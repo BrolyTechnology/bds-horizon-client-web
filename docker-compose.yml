@@ -1,0 +1,15 @@
+services:
+  bds-horizon-client-web:
+    container_name: bds-horizon-client-web
+    image: bds-horizon-client-web-app-local:v1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - '4040:4040'
+    volumes: []
+    environment:
+      - NODE_ENV=production
+      - PORT=4040

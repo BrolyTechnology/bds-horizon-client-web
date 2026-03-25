@@ -13,7 +13,7 @@ export default class Server {
     const PORT = this._config.PORT;
 
     // conection mongodb
-    await cloudConnectionMongoDb();
+    //await cloudConnectionMongoDb();
 
     return this._express.listen(PORT, () => {
       if (process.env.NODE_ENV !== 'production') {

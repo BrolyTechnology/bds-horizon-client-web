@@ -3,7 +3,7 @@ import { Router } from 'express';
 export default function ({ homeController }) {
   const router = Router();
 
-  router.get('/health', homeController.index);
+  router.get('', homeController.viewRender);
 
   return router;
 }

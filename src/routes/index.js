@@ -7,7 +7,7 @@ import 'express-async-error';
 import { notFoundMiddleware } from '../middlewares/notFound.middleware';
 import { errorMiddleware } from '../middlewares/exception.middleware';
 
-export default function ({ homeRoutes, dummyRoutes }) {
+export default function ({ homeRoutes, homeViewRoutes, dummyRoutes }) {
   const router = express.Router();
   const apiRoutes = express.Router();
   const htmlViewRoutes = express.Router(); // ✅ Router separado SIN helmet
@@ -37,10 +37,10 @@ export default function ({ homeRoutes, dummyRoutes }) {
   apiRoutes.use(helmetConfig);
 
   // Rutas HTML puras (sin CSP)
-  //htmlViewRoutes.use('/catalog', dummyViewRoutes); // solo para view-temp
+  htmlViewRoutes.use('/', homeViewRoutes); // solo para view-temp
 
   // Rutas API protegidas
-  apiRoutes.use('/', homeRoutes);
+  apiRoutes.use('/home', homeRoutes);
   apiRoutes.use('/dummies', dummyRoutes);
 
   // Montar ambos en el router principal
