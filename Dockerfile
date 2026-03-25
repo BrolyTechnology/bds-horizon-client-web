@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 FROM base AS build
 
 # Copy only dependency manifests first (better layer caching)
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 # Install all deps (dev + prod)
 RUN npm install --frozen-lockfile
