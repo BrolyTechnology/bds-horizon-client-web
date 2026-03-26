@@ -141,6 +141,12 @@
         box-sizing: border-box;
       }
 
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        position: relative;
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -467,7 +473,7 @@
 
       /* ── COUNTER ─────────────────────────────────────── */
       .stat-num {
-        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-size: clamp(2rem, 6vw, 4rem);
         font-weight: 900;
         line-height: 1;
       }
@@ -951,6 +957,14 @@
           height: 300px;
         }
       }
+
+      /* Evita que los contenedores de AOS generen scroll lateral */
+      [data-aos] {
+        pointer-events: none;
+      }
+      [data-aos].aos-animate {
+        pointer-events: auto;
+      }
     </style>
   </head>
 
@@ -1164,20 +1178,6 @@
 
         <div class="container-bds relative z-10 py-20">
           <div style="max-width: 820px">
-            <div class="pill fade-in" style="margin-bottom: 1.5rem">
-              <span
-                style="
-                  width: 6px;
-                  height: 6px;
-                  border-radius: 50%;
-                  background: #c0268f;
-                  display: inline-block;
-                  animation: pulse-dot 2s infinite;
-                "
-              ></span>
-              Chiclayo, Perú · Estudio Tecnológico
-            </div>
-
             <h1
               id="hero-title"
               class="fade-in fade-in-delay-1"
@@ -1210,8 +1210,8 @@
               <strong style="color: rgba(255, 255, 255, 0.85); font-weight: 600"
                 >webs, automatizaciones, chatbots con IA</strong
               >
-              y marketing digital para emprendedores y PYMEs en Chiclayo.
-              Tecnología de nivel empresarial, precio accesible.
+              y marketing digital para emprendedores y PYMEs a nivel nacional.
+              Tecnología de nivel empresarial a precios accesibles.
             </p>
 
             <div
@@ -1323,7 +1323,7 @@
               font-weight: 600;
             "
           >
-            Empresas que confían en nosotros
+            Negocios que confían en nosotros
           </p>
         </div>
         <div style="position: relative; overflow: hidden">
@@ -1355,58 +1355,7 @@
 
           <div class="logos-track" role="list" aria-label="Empresas clientes">
             <!-- Aquí van los logos. Reemplaza cada .logo-placeholder con tu <img src="logo.png" alt="Empresa"> -->
-            <div class="logo-placeholder" role="listitem">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-              </svg>
-              Tu logo aquí
-            </div>
-            <div class="logo-placeholder" role="listitem">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-              Empresa 2
-            </div>
-            <div class="logo-placeholder" role="listitem">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                />
-              </svg>
-              Startup 3
-            </div>
+
             <div class="logo-placeholder" role="listitem">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1426,6 +1375,49 @@
                 />
               </svg>
               Negocio 4
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              AVICOLA CLAVO E.I.R.L.
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <img class="object-cover w-10" src="https://res.cloudinary.com/dwvc88n4u/image/upload/v1774560128/mrIngenieros/m_r_ingenieros_q2huuz.png" alt="M&R Ingenieros">
+              M&R Ingenieros
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <img class="object-cover w-10" src="data:image/svg+xml,%3csvg%20id='marca'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20780%20210'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23ff2832;}.cls-2{fill:%23ffb900;}.cls-3{fill:%23fff;}%3c/style%3e%3c/defs%3e%3ctitle%3eevem-consultores%3c/title%3e%3cg%20id='compacta-02'%3e%3cg%20id='G1'%3e%3crect%20class='cls-1'%20x='737.01'%20y='164.06'%20width='35.81'%20height='27.19'/%3e%3cpath%20class='cls-2'%20d='M135.9,146.45L162,172.81c-12.49,13-37.18,22.2-58.83,22.2-44.12,0-78-31.36-78-75.48,0-43.57,32.74-74.64,76-74.64,45.51,0,73.26,32.47,73.26,86.85H69.58c3.61,16.37,15.54,27.47,31.91,27.47A56,56,0,0,0,135.9,146.45ZM70.13,105.38h59.38c-3.33-14.71-13.32-24.7-28.3-24.7C86,80.68,74.57,90.4,70.13,105.38Z'/%3e%3cpath%20class='cls-3'%20d='M417.09,18.1c-43.29,0-76,31.1-76,74.67,0,44.12,33.85,75.49,78,75.49,21.64,0,46.34-9.15,58.83-22.19L451.78,119.7a55.93,55.93,0,0,1-34.41,12.72c-16.37,0-28.3-11.53-31.91-27.52H490.34C490.34,50.55,462.6,18.1,417.09,18.1ZM386,79.33c4.44-16,15.82-24.7,31.08-24.7,15,0,25,8.71,28.3,24.7H386Z'/%3e%3cpath%20class='cls-3'%20d='M683.53,18.15c-21.64,0-38.54,10-46,25.53-9.43-15.82-26.64-25.53-46.06-25.53-17.2,0-30.29,8.32-38.29,21.37V21.77H506.78v142.3h46.37V80c0-13,9.59-22.75,23.74-22.75,13.32,0,22.63,10.27,22.63,24.7v82.1h44.77V80c0-13,10.53-22.75,24.68-22.75,13.32,0,23.29,10.27,23.29,24.7v82.1H737V73.64C737,41.18,713.49,18.15,683.53,18.15Z'/%3e%3cg%20id='V'%3e%3cpath%20class='cls-2'%20d='M273,191.24H229.4L169.12,50.8h48.56Z'/%3e%3cpolygon%20class='cls-3'%20points='229.4%20191.25%20272.97%20191.25%20347.43%2018.75%20298.56%2018.75%20229.4%20191.25'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Consultora EVEM">
+              Consultora EVEM
+            </div>
+            <div class="logo-placeholder" role="listitem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              Startup 3
             </div>
             <div class="logo-placeholder" role="listitem">
               <svg
@@ -1606,7 +1598,7 @@
               "
             >
               No somos una agencia genérica. Cada servicio está diseñado para
-              generar resultados reales en el mercado chiclayano.
+              generar resultados reales en el mercado peruano
             </p>
           </div>
 
@@ -1642,7 +1634,7 @@
                   margin-bottom: 0.7rem;
                 "
               >
-                Desarrollo Web
+                Desarrollo Sistemas Web
               </h3>
               <p
                 style="
@@ -1655,7 +1647,7 @@
               >
                 Sitios web profesionales, e-commerce, sistemas con panel admin,
                 landing pages y aplicaciones web a medida. Rápidas, modernas y
-                orientadas a convertir.
+                orientadas a tu modelo de negocio.
               </p>
               <ul
                 style="
@@ -1684,7 +1676,7 @@
                       flex-shrink: 0;
                     "
                   ></span
-                  >Diseño responsive + SEO
+                  >Diseño moderno y personalizado
                 </li>
                 <li
                   style="
@@ -1704,7 +1696,7 @@
                       flex-shrink: 0;
                     "
                   ></span
-                  >Panel de administración
+                  >Posicionamiento en buscadores (SEO)
                 </li>
                 <li
                   style="
@@ -1724,7 +1716,7 @@
                       flex-shrink: 0;
                     "
                   ></span
-                  >Desde S/ 800
+                  >Adaptado a multidispotivos
                 </li>
               </ul>
             </article>
@@ -1841,7 +1833,7 @@
                       flex-shrink: 0;
                     "
                   ></span
-                  >Desde S/ 700
+                  >Optimización de procesos
                 </li>
               </ul>
             </article>
@@ -1938,26 +1930,6 @@
                     "
                   ></span
                   >Memoria + IA generativa
-                </li>
-                <li
-                  style="
-                    font-size: 0.8rem;
-                    color: rgba(255, 255, 255, 0.4);
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                  "
-                >
-                  <span
-                    style="
-                      width: 5px;
-                      height: 5px;
-                      border-radius: 50%;
-                      background: #9b4dca;
-                      flex-shrink: 0;
-                    "
-                  ></span
-                  >Desde S/ 1,200
                 </li>
               </ul>
             </article>
@@ -2071,7 +2043,7 @@
                       flex-shrink: 0;
                     "
                   ></span
-                  >Desde S/ 600
+                  >Metricas de análisis de datos
                 </li>
               </ul>
             </article>
@@ -2092,26 +2064,25 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               
               <div class="flex flex-col items-start">
-                <div class="badge badge-outline badge-primary mb-4 fade-in">
+                <div class="pill fade-in" style="margin-bottom: 1rem">
                   ¿Por qué elegirnos?
                 </div>
                 
                 <h2
                   id="why-title"
-                  class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 fade-in fade-in-delay-1 text-base-content"
+                  class="section-title fade-in fade-in-delay-1"
+                  style="margin-bottom: 1rem"
                 >
                   Tu competencia ya<br />
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                    está en digital.
-                  </span>
+                  <span class="gradient-text">está en digital.</span>
                 </h2>
                 
                 <p
                   class="text-base-content/60 leading-relaxed text-sm md:text-base mb-8 max-w-md font-light fade-in fade-in-delay-2"
                 >
-                  Somos el estudio tecnológico local que combina lo mejor de ambos
+                  Somos el estudio tecnológico que combina lo mejor de ambos
                   mundos: la capacidad técnica de vanguardia con el conocimiento y
-                  cercanía del mercado de Chiclayo.
+                  cercanía del mercado <b>peruano</b>.
                 </p>
                 
                 <a
@@ -2129,9 +2100,9 @@
                 <div class="flex gap-4 p-4 rounded-2xl bg-base-100/50 hover:bg-base-100 transition-colors duration-300 shadow-sm fade-in">
                   <div class="text-primary font-bold text-xl opacity-50 shrink-0" aria-hidden="true">01</div>
                   <div>
-                    <h3 class="font-bold text-base mb-1 text-base-content">Locales y cercanos</h3>
+                    <h3 class="font-bold text-base mb-1 text-base-content">Entrega de valor</h3>
                     <p class="text-base-content/60 text-xs md:text-sm leading-relaxed font-light">
-                      Estamos en Chiclayo. Nos reunimos en persona, conocemos tu mercado y respondemos rápido por WhatsApp.
+                      Estamos cerca de tí. Entregamos valor, no código, a medida que avanzamos en el desarrollo del software.
                     </p>
                   </div>
                 </div>
@@ -2139,9 +2110,9 @@
                 <div class="flex gap-4 p-4 rounded-2xl bg-base-100/50 hover:bg-base-100 transition-colors duration-300 shadow-sm fade-in fade-in-delay-1">
                   <div class="text-primary font-bold text-xl opacity-50 shrink-0" aria-hidden="true">02</div>
                   <div>
-                    <h3 class="font-bold text-base mb-1 text-base-content">Tecnología real, no plantillas</h3>
+                    <h3 class="font-bold text-base mb-1 text-base-content">Tecnología real</h3>
                     <p class="text-base-content/60 text-xs md:text-sm leading-relaxed font-light">
-                      Construimos a medida con Node.js, Angular, PostgreSQL e IA. Nada genérico ni limitado.
+                      Construimos software a medida del negocio, utlizando tecnología estable y escalable.
                     </p>
                   </div>
                 </div>
@@ -2151,7 +2122,7 @@
                   <div>
                     <h3 class="font-bold text-base mb-1 text-base-content">Resultados medibles</h3>
                     <p class="text-base-content/60 text-xs md:text-sm leading-relaxed font-light">
-                      No vendemos solo código. Cada proyecto tiene métricas claras: más ventas y automatización real.
+                      No vendemos solo código. Cada proyecto tiene métricas claras: más ventas, mejor gestión y trabajos automatizados.
                     </p>
                   </div>
                 </div>
@@ -2280,7 +2251,7 @@
                 font-weight: 300;
               "
             >
-              Precios reales para el mercado chiclayano. Sin sorpresas.
+              Precios reales para el mercado peruano. Sin sorpresas.
             </p>
           </div>
 
@@ -2288,7 +2259,7 @@
             class="grid gap-6 fade-in"
             style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
           >
-            <!-- Básico -->
+            <!-- Sistemas web -->
             <article class="price-card basic" aria-label="Plan básico">
               <h3
                 style="
@@ -2298,7 +2269,7 @@
                   color: rgba(255, 255, 255, 0.7);
                 "
               >
-                Web Esencial
+                Sistemas Web
               </h3>
               <div
                 style="
@@ -2308,9 +2279,9 @@
                   margin-bottom: 1.5rem;
                 "
               >
-                <span style="font-size: 2.4rem; font-weight: 900">S/ 800</span>
+                <span style="font-size: 2.4rem; font-weight: 900">S/ 1,700</span>
                 <span style="color: rgba(255, 255, 255, 0.3); font-size: 0.8rem"
-                  >pago único</span
+                  >Desde</span
                 >
               </div>
               <ul
@@ -2346,7 +2317,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Hasta 5 páginas
+                  Tienda virtual
                 </li>
                 <li
                   style="
@@ -2371,7 +2342,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Diseño responsive + SSL
+                  Diseño moderno y responsive
                 </li>
                 <li
                   style="
@@ -2396,7 +2367,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  SEO básico + Formulario
+                  SEO básico
                 </li>
                 <li
                   style="
@@ -2421,7 +2392,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Botón WhatsApp flotante
+                  Panel Administrativo
                 </li>
                 <li
                   style="
@@ -2446,14 +2417,64 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Hosting + Dominio 1er año
+                  Facturación electrónica
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  30 días de soporte
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Capacitación personalizada
                 </li>
               </ul>
               <a
                 href="#contacto"
                 class="btn-outline"
                 style="width: 100%; justify-content: center"
-                >Empezar</a
+                >Cotizar</a
               >
             </article>
 
@@ -2465,7 +2486,7 @@
               <h3
                 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem"
               >
-                Suite Digital
+                Marketing Digital
               </h3>
               <div
                 style="
@@ -2478,11 +2499,11 @@
                 <span
                   style="font-size: 2.4rem; font-weight: 900"
                   class="gradient-text"
-                  >S/ 3,500</span
+                  >S/ 750</span
                 >
                 <span
                   style="color: rgba(255, 255, 255, 0.35); font-size: 0.8rem"
-                  >pago único</span
+                  >Desde</span
                 >
               </div>
               <ul
@@ -2518,7 +2539,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Web completa + panel admin
+                  Landing page
                 </li>
                 <li
                   style="
@@ -2543,7 +2564,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Automatización de procesos
+                  Campañas publicitarias digitales
                 </li>
                 <li
                   style="
@@ -2568,7 +2589,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Chatbot IA en WhatsApp
+                  Posicionamiento en buscadores
                 </li>
                 <li
                   style="
@@ -2618,7 +2639,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  1 mes de soporte incluido
+                  30 días de soporte
                 </li>
                 <li
                   style="
@@ -2654,7 +2675,7 @@
               >
             </article>
 
-            <!-- Mantenimiento -->
+            <!-- Automatizaciones -->
             <article class="price-card basic" aria-label="Plan mantenimiento">
               <h3
                 style="
@@ -2664,7 +2685,7 @@
                   color: rgba(255, 255, 255, 0.7);
                 "
               >
-                Mantenimiento
+                Automatizaciones y/o IA
               </h3>
               <div
                 style="
@@ -2674,9 +2695,9 @@
                   margin-bottom: 1.5rem;
                 "
               >
-                <span style="font-size: 2.4rem; font-weight: 900">S/ 400</span>
+                <span style="font-size: 2.4rem; font-weight: 900">S/ 850</span>
                 <span style="color: rgba(255, 255, 255, 0.3); font-size: 0.8rem"
-                  >/mes</span
+                  >desde</span
                 >
               </div>
               <ul
@@ -2712,7 +2733,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Soporte web + automatizaciones
+                  Comunicación y notificaciones
                 </li>
                 <li
                   style="
@@ -2737,7 +2758,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Backups + actualizaciones
+                  Gestion de datos y reportes
                 </li>
                 <li
                   style="
@@ -2762,7 +2783,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Ajuste de bot mensual
+                  Automatizaciones de procesos internos
                 </li>
                 <li
                   style="
@@ -2787,14 +2808,64 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Reporte mensual de métricas
+                  Integraciones con terceros
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  30 días de soporte
+                </li>
+                <li
+                  style="
+                    font-size: 0.85rem;
+                    color: rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7B2FBE"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="flex-shrink: 0; margin-top: 3px"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Capacitación personalizada
                 </li>
               </ul>
               <a
                 href="#contacto"
                 class="btn-outline"
                 style="width: 100%; justify-content: center"
-                >Consultar</a
+                >Cotizar</a
               >
             </article>
           </div>
@@ -3027,7 +3098,7 @@
               </p>
               
               <a
-                href="https://wa.me/51999999999"
+                href="https://wa.me/51936787248?text=¡Hola Broly!, quiero una contización para mi negocio."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-outline btn-primary mt-6 gap-2 fade-in fade-in-delay-3"
@@ -3047,7 +3118,7 @@
                 <div class="accordion-content transition-[height] duration-300 overflow-hidden">
                   <div class="pb-4 px-5">
                     <p class="text-base-content/60 text-sm leading-relaxed font-light">
-                      Depende del alcance. Una web institucional puede estar lista en 2–3 semanas. Una suite completa con automatizaciones e IA puede tomar 4–6 semanas. Siempre te damos un cronograma exacto.
+                      Depende del alcance. Una sistema web puede estar lista en 2–4 semanas. Una suite completa con automatizaciones e IA puede tomar 4–8 semanas. Siempre te damos un cronograma exacto.
                     </p>
                   </div>
                 </div>
@@ -3061,7 +3132,7 @@
                 <div class="accordion-content hidden transition-[height] duration-300 overflow-hidden">
                   <div class="pb-4 px-5">
                     <p class="text-base-content/60 text-sm leading-relaxed font-light">
-                      No. Trabajamos con un esquema de pagos por hitos: 50% inicio, 25% avance intermedio y 25% entrega final. Aceptamos transferencias locales y billeteras digitales.
+                      No. Trabajamos con un esquema de pagos por hitos: 50% inicio, 25% avance intermedio y 25% entrega final. Aceptamos transferencias y billeteras digitales.
                     </p>
                   </div>
                 </div>
@@ -3075,7 +3146,7 @@
                 <div class="accordion-content hidden transition-[height] duration-300 overflow-hidden">
                   <div class="pb-4 px-5">
                     <p class="text-base-content/60 text-sm leading-relaxed font-light">
-                      Sí. Te entregamos un enlace de stage para que revises el progreso en tiempo real. Mantenemos comunicación directa para que el resultado sea exactamente lo que esperas.
+                      Sí. Te entregamos un enlace de stage para que revises el progreso y valor entregado en tiempo real. Mantenemos comunicación directa para que el resultado sea exactamente lo que esperas.
                     </p>
                   </div>
                 </div>
@@ -3083,18 +3154,17 @@
 
               <div class="accordion-item">
                 <button class="accordion-toggle inline-flex items-center justify-between text-start text-base-content font-semibold text-sm md:text-base py-4 px-5">
-                  ¿Trabajan solo en Chiclayo?
+                  ¿Las cotizaciones tienen costo?
                   <span class="icon-[tabler--plus] accordion-item-active:rotate-45 size-5 shrink-0 transition-transform duration-300"></span>
                 </button>
                 <div class="accordion-content hidden transition-[height] duration-300 overflow-hidden">
                   <div class="pb-4 px-5">
                     <p class="text-base-content/60 text-sm leading-relaxed font-light">
-                      Nuestra oficina central está en Chiclayo, pero atendemos a todo el Perú. Las reuniones pueden ser presenciales aquí o virtuales vía Zoom/Meet según tu preferencia.
+                      No. Queremos brindarte precios accesibles para la construcción del producto digital en tu negocio.
                     </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -3347,7 +3417,7 @@
               >
                 También puedes escribirnos directamente por
                 <a
-                  href="https://wa.me/51999999999"
+                  href="https://wa.me/51999999999?text=¡Hola Broly!, quiero una contización para mi negocio."
                   target="_blank"
                   rel="noopener noreferrer"
                   style="color: #9b4dca; text-decoration: none"
@@ -3776,14 +3846,14 @@
                   />
                 </svg>
                 <a
-                  href="https://wa.me/51999999999"
+                  href="https://wa.me/51936787248?text=¡Hola Broly!, quiero una contización para mi negocio."
                   style="
                     color: rgba(255, 255, 255, 0.4);
                     font-size: 0.82rem;
                     text-decoration: none;
                     font-weight: 300;
                   "
-                  >+51 999 999 999</a
+                  >+51 936 787 248</a
                 >
               </li>
               <li style="display: flex; gap: 8px; align-items: center">
@@ -3805,14 +3875,14 @@
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 <a
-                  href="mailto:contacto@brolydevelopment.com"
+                  href="mailto:brolydevelopmentstudio@gmail.com"
                   style="
                     color: rgba(255, 255, 255, 0.4);
                     font-size: 0.82rem;
                     text-decoration: none;
                     font-weight: 300;
                   "
-                  >contacto@brolydevelopment.com</a
+                  >brolydevelopmentstudio@gmail.com</a
                 >
               </li>
             </ul>
@@ -3838,7 +3908,7 @@
               font-weight: 300;
             "
           >
-            © 2025 Broly Development Studio. Todos los derechos reservados.
+            © 2026 Broly Development Studio. Todos los derechos reservados.
           </p>
           <p
             style="
@@ -3847,7 +3917,7 @@
               font-weight: 300;
             "
           >
-            Hecho con ❤️ en Chiclayo, Perú
+            Hecho con ❤️ en Perú
           </p>
         </div>
       </div>
@@ -3883,6 +3953,14 @@
        JAVASCRIPT
   ═══════════════════════════════════════════════════ -->
     <script>
+      // Script para detectar qué elemento rompe el ancho en mobile
+      document.querySelectorAll('*').forEach(el => {
+          if (el.offsetWidth > document.documentElement.offsetWidth) {
+              console.log('Elemento con overflow:', el);
+              el.style.outline = '2px solid red'; // Lo marcará en rojo en tu inspeccionador
+          }
+      });
+
       // ── NAV SCROLL ────────────────────────────────────────
       const navbar = document.getElementById("navbar");
       window.addEventListener(

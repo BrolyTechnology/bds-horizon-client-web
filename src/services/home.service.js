@@ -2,7 +2,6 @@ import { connectSpreadsheet } from '../plugins/google.plugin';
 import { SHEET_HEADERS_POTENTIAL_CLIENTS } from '../common/sheetHeadConstants';
 import { readFile } from '../utils/template.util';
 import { formatToPeruTime } from '../utils/date.util';
-import AppError from '../utils/appError.util';
 
 export default class HomeService {
   constructor({ pkg }) {
