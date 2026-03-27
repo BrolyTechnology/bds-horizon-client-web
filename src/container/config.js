@@ -5,6 +5,10 @@ if (process.env.NODE_ENV !== 'production') {
 export default {
   PORT: process.env.PORT || 4000,
 
+  // TELEGRAM
+  TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+  TELEGRAM_BOT_CHAT_ID: process.env.TELEGRAM_BOT_CHAT_ID,
+
   // GOOGLE PRODUCTS
   GOOGLE_SPREADSHEET_ID: process.env.GOOGLE_SPREADSHEET_ID,
   GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,

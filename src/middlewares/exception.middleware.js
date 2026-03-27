@@ -1,4 +1,6 @@
 export const errorMiddleware = (err, req, res, next) => {
+  console.error(`[ERROR] ${err.message}`);
+  
   const statusHttp = err.errorStatus || err.status || 500;
   const code = err.errorCode || 'INTERNAL_SERVER_ERROR';
   const message = err.message || 'An unexpected error occurred';

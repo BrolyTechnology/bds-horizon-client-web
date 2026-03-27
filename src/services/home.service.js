@@ -4,8 +4,9 @@ import { readFile } from '../utils/template.util';
 import { formatToPeruTime } from '../utils/date.util';
 
 export default class HomeService {
-  constructor({ pkg }) {
+  constructor({ pkg, notificationService }) {
     this._pkg = pkg;
+    this._notificationService = notificationService;
     this.clientCaputeSheet = 'client_capture';
   }
 
@@ -21,10 +22,23 @@ export default class HomeService {
     return readFile('home.html');
   }
 
+  _buildMessageNotification(entry) {
+    console.log(entry);
+    return (
+      `🚨 <b>NUEVO CLIENTE POTENCIAL</b> 🚨\n\n` +
+      `👤 <b>Nombre:</b> ${entry[SHEET_HEADERS_POTENTIAL_CLIENTS.NAME]}\n` +
+      `💽 <b>Producto:</b> ${entry[SHEET_HEADERS_POTENTIAL_CLIENTS.PRODUCT]}\n` +
+      `📋 <b>Estado:</b> ${entry[SHEET_HEADERS_POTENTIAL_CLIENTS.STATUS]}\n` +
+      `📱 <b>WhatsApp:</b> ${entry[SHEET_HEADERS_POTENTIAL_CLIENTS.WHATSAPP]}\n\n` +
+      `⚠️ <i>Este registro requiere atención inmediata.</i>`
+    );
+  }
+
   async captureDataClient(req) {
     const entry = {
       [SHEET_HEADERS_POTENTIAL_CLIENTS.DATE]: formatToPeruTime(req.fecha),
       [SHEET_HEADERS_POTENTIAL_CLIENTS.NAME]: req.nombre,
+      [SHEET_HEADERS_POTENTIAL_CLIENTS.PRODUCT]: req.servicio,
       [SHEET_HEADERS_POTENTIAL_CLIENTS.STATUS]: 'PENDIENTE',
       [SHEET_HEADERS_POTENTIAL_CLIENTS.WHATSAPP]: req.whatsapp,
       [SHEET_HEADERS_POTENTIAL_CLIENTS.MESSAGE]: req.mensaje,
@@ -49,5 +63,10 @@ export default class HomeService {
 
     await sheet.addRow(entry);
     console.log('✅ Datos guardados correctamente en Google Sheets');
+
+    const messageTel = this._buildMessageNotification(entry);
+
+    await this._notificationService.sendMessageTelegram(messageTel);
+    console.log('✅ Notificación envíado correctamente a telegram');
   }
 }
