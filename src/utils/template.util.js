@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 
-export function readFile(filename) {
-  const route = path.join(process.cwd(), 'assets', 'templates', filename);
+export function readFile(folder, filename) {
+  const route = path.join(process.cwd(), 'assets', folder, filename);
   return readFileSync(route, 'utf-8');
 }
 

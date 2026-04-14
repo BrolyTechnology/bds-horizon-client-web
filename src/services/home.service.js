@@ -19,7 +19,11 @@ export default class HomeService {
   }
 
   viewRender() {
-    return readFile('home.html');
+    return readFile('public', 'home.html');
+  }
+
+  resultOnpeRender() {
+    return readFile('public', 'resultados-onpe-2026.html');
   }
 
   _buildMessageNotification(entry) {

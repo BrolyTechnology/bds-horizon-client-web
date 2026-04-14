@@ -6,6 +6,7 @@ export default class HomeController {
 
     this.index = this.index.bind(this);
     this.viewRender = this.viewRender.bind(this);
+    this.resultOnpeRender = this.resultOnpeRender.bind(this);
     this.captureDataClient = this.captureDataClient.bind(this);
   }
 
@@ -16,6 +17,10 @@ export default class HomeController {
 
   viewRender(req, res) {
     return responseViewOk(res, this._homeService.viewRender());
+  }
+
+  resultOnpeRender(req, res) {
+    return responseViewOk(res, this._homeService.resultOnpeRender());
   }
 
   async captureDataClient(req, res) {
